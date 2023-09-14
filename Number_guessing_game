@@ -1,0 +1,21 @@
+import random
+import math
+m=int(input("enter upper bound"))
+n=int(input("enter lower bound"))
+x=random.randint(n,m)
+print("You have ",round(math.log(m-n+1,2)),"times to guess")
+count=0
+while count<math.log(m-n+1,2):
+    count+=1
+    y=int(input("enter guess:"))
+    if x==y:
+        print("congratulations!! you guess number in ", count, "attempt")
+        break
+    elif x>y:
+        print("number is small!!")
+    elif x<y:
+        print("number is large!!")
+        
+    if count>=math.log(m-n+1,2):
+        print("the number is :",x)
+        print("better luck next time!!")
