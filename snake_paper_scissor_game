@@ -1,0 +1,74 @@
+print('WELCOME, TO THE STONE,PAPER AND SCISSOR GAME')
+print('RULES:1)If you choose stone and comp choose paper then you lose or if comp choose scissor then you won as stone broke scissors and paper folded stone')
+print('2)If you choose paper and comp choose scissor then you win or if comp choose stone then you loose as paper broke paper into pieces and stone is folded by paper')
+print('3)If you choose scissor and comp paper then you win and if comp choose stone then you loose')
+import random
+n=int(input('no of time we will play a game'))
+c=0  # total time played a game
+d=0 #you won count
+e=0 #computer won count
+f=0 #when game is tie
+for i in range(n):
+    a=str(input('enter yourchoice'))
+
+    if (a=='stone'):
+        a_name='stone'
+        print("your's choice :",a_name)
+    elif a=='paper':
+        a_name='paper'
+        print("your's choice :",a_name)
+    elif a=='scissor' :
+        a_name='scissor'
+        print("your's choice :",a_name)
+
+    else:
+        print('this is not in option')
+      
+    print("now its computer's turn")
+    b=random.randint(1,3)
+    if (b==1):
+        b_name='stone'
+        print("comp's choice :",b_name)
+    elif b==2:
+        b_name='paper'
+        print("comp's choice :",b_name)
+    elif b==3 :
+        b_name='scissor'
+        print("comp's choice :",b_name)
+
+
+    if a==b_name:
+        print('game is tie')
+        c+=1
+        f+=1
+    elif(a=='stone' and b==3 ):
+        print('you won')
+        c+=1
+        d+=1
+    elif(a=='stone' and b==2):
+        print('you lose')
+        c+=1
+        e+=1
+    elif(a=='paper' and b==1):
+        print('you won')
+        c+=1
+        d+=1
+    elif(a=='paper' and b==3):
+        print('you lose')
+        c+=1
+        e+=1
+    elif(a=='scissor' and b==1):
+        print('you lose')
+        c+=1
+        e+=1
+    elif(a=='scissor' and b==2):
+        print('you win')
+        c+=1
+        d+=1
+    
+print('no of times you won:',d)
+print('no of times comp won:',e)
+print('total no of times game played :',c)
+print('total no of times game tie:',f)
+
+    
